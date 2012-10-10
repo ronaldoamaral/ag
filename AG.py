@@ -1,3 +1,4 @@
+import random
 import math
 
 class Cromossomo():
@@ -8,7 +9,10 @@ class Cromossomo():
     self.gens = self.gerar_gens(nbits) 
     
   def gerar_gens(self, nbits):
-    return '1000101110110101000111'
+    gen = ''
+    for i in range(nbits):
+      gen = gen + str(random.randint(0,1))
+    return gen
     
   def valor(self):
     """ Retorna um valor real correspondente a conversao do binario"""
@@ -33,7 +37,16 @@ class AG():
 
   def gerar_populacao(self, tamanho):
     for i in range(tamanho):
-      self.pop.append(Cromossomo(self.n_bits, self.min, self.max))   
+      self.pop.append(Cromossomo(self.n_bits, self.min, self.max))  
+
+  def evalute(self,funcao):
+    return
+
+  def selecao(self,):
+    return 
+
+  def crossove(self,):
+    return
 
   
 def main():
