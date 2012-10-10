@@ -37,15 +37,23 @@ class AG():
 
   def gerar_populacao(self, tamanho):
     for i in range(tamanho):
-      self.pop.append(Cromossomo(self.n_bits, self.min, self.max))  
+      self.pop.append(Cromossomo(self.n_bits, self.min, self.max)) 
 
-  def evalute(self,funcao):
-    return
+  def fitness(self, cromossomo):
+    return cromossomo.valor()
+ 
+  def evalute(self):
+    soma = 0
+    res = []
+    for i in range(len(self.pop)):
+      res.append(self.fitness(self.pop[i]))
+      soma = soma + res[i]
+    return soma
 
-  def selecao(self,):
+  def selecao(self):
     return 
 
-  def crossove(self,):
+  def crossover(self):
     return
 
   
@@ -54,6 +62,7 @@ def main():
   ag.gerar_populacao(10)
   for i in ag.pop:
     print i.gens + " = " + str(i.valor())
+  print ag.evalute()
 
 if __name__ == "__main__":
   main()  
