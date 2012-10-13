@@ -40,7 +40,9 @@ class AG():
       self.pop.append(Cromossomo(self.n_bits, self.min, self.max)) 
 
   def fitness(self, cromossomo):
-    return cromossomo.valor()
+    x =  cromossomo.valor()
+    fx = x*math.sin((10*math.pi)*x) + 1.0
+    return fx
  
   def evalute(self):
     soma = 0
